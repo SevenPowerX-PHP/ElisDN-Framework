@@ -4,3 +4,4 @@
 git clone git@github.com:SevenPowerX-PHP/ElisDN-Framework.git
 
 
+>Перед Прохождением даной серии уроков рекомендуем изучить [Дополнительные матереалы](README_FILES/dop_mat.md)
