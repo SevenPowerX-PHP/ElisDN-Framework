@@ -8,17 +8,72 @@
   * [Фреймворк](https://ru.wikipedia.org/wiki/%D0%A4%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA)
   * [Библиотеки](https://ru.wikipedia.org/wiki/%D0%91%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D0%B0_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5))
     
-Фрамеворк
-    проэкт
-            Библиотека 1
-            Библиотека 2
+- Фрамеворк 
+  * проэкт
+       * Библиотека 1
+       * Библиотека 2
+  ```puml
+    @startuml
+            Фрамеворк -> "Проэкт" : Hello World
+            "Библиотека 1" -[#0000FF]-> "Проэкт" : Библиотека 1
+            "Библиотека 2"  -[#0000FF]-> "Проэкт" : Библиотека 2
+            ' You can also declare: Библиотека 1
+            ' "Проэкт" -> Long as "Библиотека 2"
+            "Библиотека N"  -[#0000FF]-> "Проэкт" : Библиотека n
+    @enduml
+```          
+            
 
 
    // TODO:splaa [Выполнить задачу](https://github.com/SevenPowerX-PHP/ElisDN-Framework/issues/1)
+   - Настройка PhpStorm [ссылка](https://stackoverflow.com/questions/21303599/plantuml-and-graphviz-plugin-setup-phpstorm)
 
 ```puml
-A -> B
+A -> B 
+Bob->Alice : hello hello 2
 ```
+
+
+```puml
+Фрамеворк -> проэкт
+Проэкт -> Библиотека1 
+```
+
+```plantuml
+Bob->Alisa: hello
+```
+```plantuml
+digraph Test {
+A -> B
+}
+```
+
+```plantuml
+@startuml
+actor actor
+agent agent
+artifact artifact
+boundary boundary
+card card
+cloud cloud
+component component
+control control
+database database
+entity entity
+file file
+folder folder
+frame frame
+interface  interface
+node node
+package package
+queue queue
+stack stack
+rectangle rectangle
+storage storage
+usecase usecase
+@enduml
+```
+
 ========================
 
  - JavaScript
