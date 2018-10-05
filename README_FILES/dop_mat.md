@@ -7,4 +7,4 @@
 * [Getting Started Markdown](https://www.markdownguide.org/getting-started)
 
 
-    
+ * [Дмитрий Елисеев | Неделя ООП (2016)](http://nnm-club.me/forum/viewtopic.php?t=1191564)
