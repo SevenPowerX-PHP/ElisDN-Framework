@@ -108,5 +108,41 @@ PHP 4 - OOP
  =========================
  
  
+ create public/index.php 
+    
+    echo 'Hello PHP!!!' . PHP_EOL;
+ Запускаем в консоли
+        
+            $ php publoc/index.php
+Запускаем в браузере
+    
+    php -S 0.0.0.0:8080 -t public public/index.php
+    
+ Переходим по ссылке в браузере http://0.0.0.0:8080 или http://localhost:8080
  
-
+ Передача парамнтров
+    
+    http://localhost:8080?name=Вася
+    
+ Add to index.php 
+    
+    $name = $_GET['name'] ?? 'Guest';
+    echo 'Hello PHP I am ' . $name . PHP_EOL;
+ Upgrade to index.php 
+    
+    $name = !empty($_GET['name']) ? $_GET['name'] : 'Guest';
+    echo 'Hello PHP I am ' . $name . PHP_EOL;
+    
+ Для тестирования в PHPStorm переходим на вкладку Tools | HTTP client | Test RESTful Web Service
+ 
+ Добавим свой заголовок в index.php
+ 
+    header('X-Developer: SevenPowerX 2018');
+ Проверяем на вкладке Response Headers
+ 
+  
+  http://localhost:8080?name=Вася
+  
+  Все данные получаем из глобальных массивов 
+  
+  $_GET, $_POST, $_COOKIE, $_FILES, $_SESSION, $_SERVER
