@@ -1,4 +1,24 @@
 ## [Composer](https://getcomposer.org/doc/01-basic-usage.md)
+
+create composer.json file to PhPStorm
+Tools | Composer | Init Composer...  
+    
+        {
+          "name": "vendor_name/package_name",
+          "description": "description_text",
+          "minimum-stability": "stable",
+          "license": "proprietary",
+          "authors": [
+            {
+              "name": "author's name",
+              "email": "email@example.com"
+            }
+          ]
+        }
+        
+        
+        
+        
 PictureManager
 
 Используем логер monolog/monolog. В файле composer.json прописываем и [т.д ....](https://getcomposer.org/doc/01-basic-usage.md)
