@@ -6,7 +6,7 @@
 	 * Time: 14:00
 	 */
 	
-	function getLang(array $get, array $cookie, array $session, array $server, $default){
+	/*function getLang(array $get, array $cookie, array $session, array $server, $default){
 		return
 			!empty($get['lang']) ? $get['lang'] :
 				(!empty($cookie['lang']) ? $cookie['lang']:
@@ -19,11 +19,21 @@
 		
 	}
 	
-	session_start();
+	session_start();*/
 	
-	$name = !empty($_GET['name']) ?	$_GET['name'] : 'Guest';
-	$lang = getLang($_GET, $_COOKIE, $_SESSION, $_SERVER,'en');
-//	$lang = 'en';
+	use Framework\Http\Request;
+	
+	chdir(dirname(__DIR__));
+	require 'src/Framework/Http/Request.php';
+	
+	$request = new Request();
+	
+	$name = !empty($request->getQueryParams()['name']) ? $request->getQueryParams()['name'] : 'Guest';
+	/*
+		$name = !empty($_GET['name']) ?	$_GET['name'] : 'Guest';
+		$lang = getLang($_GET, $_COOKIE, $_SESSION, $_SERVER,'en');
+	*/
+		$lang = 'en';
 	
 	header('X-Developer: SevenPowerX 2018');
 	echo 'Hello PHP I am ' . $name . PHP_EOL;
