@@ -70,6 +70,41 @@ PictureManager
             }
         }
         
+        
+ - [ ] 1:11:00 - секция "scripts"  в composer.json файле
+    
+        composer install --dev - (для разработки)
+        composer install --no-dev (для продакшин)
+        
+    Добавляем в composer.json file    
+        
+        "scripts": {
+            "serverLoc": "php -S 0.0.0.0:8080 -t public public/index.php",
+            "tests": "phpunit --color=always"
+          }
+          
+     Для запуска скриптов:
+      
+      Сервер:
+      
+            composer serverLoc
+      Тесты:      
+      
+            composer tests 
+    
+    Скрипт "serverLoc" может выдать ошибку подключения Если сервер запущен.
+    ищем php процес:
+            lsof -i tcp:8080 
+            
+            splaa@splaa-Acer-Extensa-7630G:~/Sites/ElisDn/framework.loc$ lsof -i tcp:8080
+            COMMAND   PID  USER   FD   TYPE  DEVICE SIZE/OFF NODE NAME
+            php     17208 splaa    8u  IPv4 1791811      0t0  TCP *:http-alt (LISTEN)
+            
+      Убиваем php процесс: kill -9 17208
+         
+            splaa@splaa-Acer-Extensa-7630G:~/Sites/ElisDn/framework.loc$ kill -9 17208
+            
+        
  Packagist Репозиторий пакетов PHP https://packagist.org/       
 guzzle/guzzle
             
