@@ -38,10 +38,25 @@
 			];
 			
 			
-			$request = new Request();
 			
-			self::assertEquals($data, $request->getQueryParams());
-			self::assertNull($request->getParseBody());
+			/*
+				Todo:splaandrey@gmail.com:: Создать конструктор для Request() класса
+			
+						$request = new Request($get, $post);
+							$request_N = new Request(
+							[
+								'name' => 'John',
+								'age' => 28,
+							],[]);
+			*/
+			$request_1 = new Request();
+			$request_2 = new Request();
+			
+			self::assertEquals($data, $request_1->getQueryParams());
+			self::assertNull($request_1->getParseBody());
+			
+			self::assertEquals($data, $request_2->getQueryParams());
+			self::assertNull($request_2->getParseBody());
 		}
 		
 		public function testGetParseBody():void
