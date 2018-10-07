@@ -146,3 +146,17 @@ PHP 4 - OOP
   Все данные получаем из глобальных массивов 
   
   $_GET, $_POST, $_COOKIE, $_FILES, $_SESSION, $_SERVER
+  
+  
+  #### Копирование Обьектов( [clone](http://php.net/manual/ru/language.oop5.cloning.php) )
+  
+    $copy_of_object = clone $object;
+    
+  Имутабельные обьекты (неизменяемые обьекты)
+        
+        public function withQueryParams(array $query): array
+        {
+            $new = clone $this;
+            $new->queryParams = $query;
+            return $new;
+        }
