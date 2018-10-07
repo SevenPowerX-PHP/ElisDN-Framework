@@ -32,39 +32,26 @@
 		
 		public function testGetQueryParams(): void
 		{
-			$_GET = $data = [
+			$request_1 = new Request($data_1 = [
 				'name' => 'John',
 				'age' => 28,
-			];
+			]);
+			$request_2 = new Request($data_2 = [
+				'name' => 'Bond',
+				'age' => 42,
+			]);
 			
-			
-			
-			/*
-				Todo:splaandrey@gmail.com:: Создать конструктор для Request() класса
-			
-						$request = new Request($get, $post);
-							$request_N = new Request(
-							[
-								'name' => 'John',
-								'age' => 28,
-							],[]);
-			*/
-			$request_1 = new Request();
-			$request_2 = new Request();
-			
-			self::assertEquals($data, $request_1->getQueryParams());
+			self::assertEquals($data_1, $request_1->getQueryParams());
 			self::assertNull($request_1->getParseBody());
 			
-			self::assertEquals($data, $request_2->getQueryParams());
+			self::assertEquals($data_2, $request_2->getQueryParams());
 			self::assertNull($request_2->getParseBody());
 		}
 		
 		public function testGetParseBody():void
 		{
 			
-			$_POST = $data = ['title' => 'Title'];
-			
-			$request = new Request();
+			$request = new Request([],$data = ['title' => 'Title']);
 			
 			self::assertEquals([], $request->getQueryParams());
 			self::assertEquals($data, $request->getParseBody());

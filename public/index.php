@@ -24,9 +24,13 @@
 	use Framework\Http\Request;
 	
 	chdir(dirname(__DIR__));
-//	require 'src/Framework/Http/Request.php';
 	require_once "vendor/autoload.php";
-	$request = new Request();
+	
+	### Initialization
+	
+	$request = new Request($_GET, $_POST);
+	
+	### Action
 	
 	$name = !empty($request->getQueryParams()['name']) ? $request->getQueryParams()['name'] : 'Guest';
 	/*
