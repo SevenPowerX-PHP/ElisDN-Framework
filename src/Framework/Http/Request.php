@@ -14,6 +14,17 @@
 		private $queryParams = [];
 		private $parsedBody;
 		
+		/**
+		 * Request constructor.
+		 * @param array $queryParams
+		 * @param $parsedBody
+		 */
+		public function __construct(array $queryParams = [], $parsedBody = null)
+		{
+			$this->queryParams = $queryParams;
+			$this->parsedBody = $parsedBody;
+		}
+		
 		public function withQueryParams(array $query)
 		{
 			$new = clone $this;
