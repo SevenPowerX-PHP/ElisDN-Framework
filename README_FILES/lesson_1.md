@@ -160,3 +160,38 @@ PHP 4 - OOP
             $new->queryParams = $query;
             return $new;
         }
+        
+        
+  - [ ] 1:43:00 Как делится с другими програмистами
+  
+  
+            class LanguageDetector
+            {
+                public function getLanguage(\MyFramework\Http\Request $request, $default)
+                {
+                    return ...;
+                }
+            }
+            
+            $request = new \MyFramework\Http\Request();
+            
+            $detector = new LanguageDetector();
+            echo $detector->getLanguage($request);
+            
+            interface ServerRequestInterface
+            {
+                public function getQueryParams():array;
+                public function withQueryParams(array $query): self
+            }
+            
+            class LanguageDetector
+                        {
+                            public function getLanguage(ServerRequestInterface $request, $default)
+                            {
+                                return ...;
+                            }
+                        }
+            
+            PSR-7 (набор интерфейсов)
+            
+            composer require psr/http-message

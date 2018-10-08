@@ -9,7 +9,7 @@
 	namespace Framework\Http;
 	
 	
-	class Request
+	class Request implements ServerRequestInterface, ServerRequestInterface
 	{
 		private $queryParams = [];
 		private $parsedBody;

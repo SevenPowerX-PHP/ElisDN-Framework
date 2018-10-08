@@ -10,7 +10,7 @@
 	
 	
 	
-	class Response
+	class Response implements ResponseInterface, ResponseInterface
 	{
 		private $headers = [];
 		private $body;
