@@ -191,7 +191,12 @@ PHP 4 - OOP
                                 return ...;
                             }
                         }
+   ######PSR-7 (набор интерфейсов)
             
-            PSR-7 (набор интерфейсов)
+   [PSR-7 в примерах](https://habr.com/post/250343/)
             
             composer require psr/http-message
+            
+  Все написано до нас
+  
+        composer require zendframework/zend-diactoros  

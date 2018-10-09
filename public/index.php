@@ -6,33 +6,35 @@
 	 * Time: 14:00
 	 */
 	
-	use Framework\Http\RequestFactory;
-	use Framework\Http\Response;
+	use Zend\Diactoros\Response\SapiEmitter;
+	use Zend\Diactoros\Response\HtmlResponse;
+	use Zend\Diactoros\ServerRequestFactory;
 	
 	chdir(dirname(__DIR__));
 	require_once "vendor/autoload.php";
 	
 	### Initialization
 	
-	$request = RequestFactory::fromGlobals();
+	$request = ServerRequestFactory::fromGlobals();
 	
 	### Action
 	
 	$name = $request->getQueryParams()['name'] ?? 'Guest';
 	
-	/** @var Response $response */
-	$response = (new Response('Hello,' . $name . '!'))
+	$response = (new HtmlResponse('Hello,' . $name . '!'))
 		->withHeader('X-Developer', 'SplX');
 	
 	###Sending
 	
-	//header('X-Developer: SevenPowerX 2018');
-	//echo 'Hello PHP I am ' . $name . PHP_EOL;
-	//$lang ='en';
-	//echo 'Your lang: ' . $lang . PHP_EOL;
-
-	header('HTTP/1.0' . $response->getStatusCode() . '' . $response->getReasonPhrase());
-	foreach ($response->getHeaders() as $name => $value) {
-		header($name . ':' . $value);
-	}
-	echo $response->getBody();
+	/*$emitter = new ResponseSender();
+	$emitter->send($response);*/
+	
+	/*$emitter = new SapiEmitter();
+	$emitter->send($response);*/
+	
+	// https://docs.zendframework.com/zend-diactoros/v1/emitting-responses/
+	
+/*	$response = new Zend\Diactoros\Response();
+	$response->getBody()->write("some content\n");*/
+	$emitter = new Zend\Diactoros\Response\SapiEmitter();
+	$emitter->emit($response);
