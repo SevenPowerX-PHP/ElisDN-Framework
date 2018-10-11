@@ -13,6 +13,11 @@
 	
 	class ResponseSender
 	{
+		public function __invoke()
+		{
+			// TODO: Implement __invoke() method.
+		}
+		
 		public function send(ResponseInterface $response): void
 		{
 			header(sprintf(

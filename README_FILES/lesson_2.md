@@ -5,4 +5,4 @@
 SapiEmitter переехал в пакет zendframework/zend-httphandlerrunner и доступен из неймспейса Zend\HttpHandlerRunner\Emitter\SapiEmitter.﻿
 
 [Emitters](https://docs.zendframework.com/zend-httphandlerrunner/emitters/)
-Т
+[Aura.Router/docs/getting-started.md](https://github.com/auraphp/Aura.Router/blob/ac7528785d455033157140e257b2603c271df55b/docs/getting-started.md)
