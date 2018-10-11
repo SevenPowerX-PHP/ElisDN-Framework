@@ -6,8 +6,8 @@
 	 * Time: 14:00
 	 */
 	
-	use Zend\Diactoros\Response\SapiEmitter;
 	use Zend\Diactoros\Response\HtmlResponse;
+	use Zend\Diactoros\Response\SapiEmitter;
 	use Zend\Diactoros\ServerRequestFactory;
 	
 	chdir(dirname(__DIR__));
@@ -26,15 +26,6 @@
 	
 	###Sending
 	
-	/*$emitter = new ResponseSender();
-	$emitter->send($response);*/
 	
-	/*$emitter = new SapiEmitter();
-	$emitter->send($response);*/
-	
-	// https://docs.zendframework.com/zend-diactoros/v1/emitting-responses/
-	
-/*	$response = new Zend\Diactoros\Response();
-	$response->getBody()->write("some content\n");*/
-	$emitter = new Zend\Diactoros\Response\SapiEmitter();
+	$emitter = new SapiEmitter();
 	$emitter->emit($response);
