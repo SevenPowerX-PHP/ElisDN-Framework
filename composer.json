@@ -7,7 +7,8 @@
     "ext-mbstring": "*",
     "psr/http-message": "^1.0",
     "roave/security-advisories": "dev-master",
-    "zendframework/zend-diactoros": "1.8.6"
+    "zendframework/zend-diactoros": "1.8.6",
+    "ext-json": "*"
   },
   "autoload": {
     "psr-4": {
